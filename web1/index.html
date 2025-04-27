@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precellens Consultancy | Engineering Solutions Kenya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link type='text/css' href = 'style.css'>
+    
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Precellens Logo">
+                <div class="logo-text">Precellens<span>.</span></div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Powering Progress, Engineering the Future</h1>
+        <p>Electrical, Mechanical & Energy Engineering solutions designed for impact — proudly Kenyan, globally inspired.</p>
+        <div class="btn-container">
+            <a href="#contact" class="btn">Get in Touch</a>
+            <a href="#services" class="btn btn-outline">Our Services</a>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2>About Precellens</h2>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p>Precellens is a Kenyan-based engineering firm specializing in Electrical, Mechanical, and Energy Engineering solutions. We deliver innovative, efficient, and future-ready systems for buildings, infrastructure, and industrial developments.</p>
+            
+            <h3 style="color: var(--primary); margin-top: 2.5rem;">Our Vision</h3>
+            <p>To become a leading provider of integrated engineering solutions in Africa, recognized for innovation, reliability, and sustainability.</p>
+            
+            <h3 style="color: var(--primary); margin-top: 2.5rem;">Our Mission</h3>
+            <p>To design and implement cutting-edge engineering systems that empower communities, improve infrastructure, and champion a sustainable future.</p>
+        </div>
+
+        <h2 style="margin-top: 5rem;">Our Core Values</h2>
+        <div class="values-list">
+            <div class="value-item">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Integrity</h3>
+                <p>We uphold the highest ethical standards in every project and partnership.</p>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-award"></i>
+                <h3>Excellence</h3>
+                <p>We commit to quality, accuracy, and continuous improvement.</p>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Innovation</h3>
+                <p>We embrace technology and creativity to solve real-world challenges.</p>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-leaf"></i>
+                <h3>Sustainability</h3>
+                <p>We prioritize environmentally responsible engineering practices.</p>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-handshake"></i>
+                <h3>Collaboration</h3>
+                <p>We build strong, transparent relationships with our clients and partners.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" style="background: var(--light);">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Electrical Engineering</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 5px;"></i> Power distribution (LV & MV)</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 5px;"></i> Interior & exterior lighting systems</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 5px;"></i> Backup power systems (UPS & generators)</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 5px;"></i> Earthing and lightning protection</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 5px;"></i> Energy audits and power factor correction</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Mechanical Engineering</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 5px;"></i> HVAC systems (design & implementation)</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 5px;"></i> Plumbing and drainage networks</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 5px;"></i> Fire detection & suppression systems</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 5px;"></i> Building services integration</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 5px;"></i> Lifts, escalators & vertical transport</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-solar-panel"></i></div>
+                    <h3>Energy Solutions</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 5px;"></i> Solar PV, hybrid & off-grid systems</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 5px;"></i> Energy efficiency & management</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 5px;"></i> Battery storage & smart grid integration</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 5px;"></i> Feasibility studies & technical advisory</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 5px;"></i> Compliance & environmental assessments</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sectors" class="container">
+        <h2>Sectors We Serve</h2>
+        <div class="sectors-grid">
+            <div class="sector-item">
+                <i class="fas fa-building"></i>
+                <h4>Commercial Developments</h4>
+            </div>
+            <div class="sector-item">
+                <i class="fas fa-home"></i>
+                <h4>Residential Estates</h4>
+            </div>
+            <div class="sector-item">
+                <i class="fas fa-hospital"></i>
+                <h4>Hospitals & Healthcare</h4>
+            </div>
+            <div class="sector-item">
+                <i class="fas fa-industry"></i>
+                <h4>Industrial Plants</h4>
+            </div>
+            <div class="sector-item">
+                <i class="fas fa-landmark"></i>
+                <h4>Government Projects</h4>
+            </div>
+            <div class="sector-item">
+                <i class="fas fa-school"></i>
+                <h4>Educational Campuses</h4>
+            </div>
+            <div class="sector-item">
+                <i class="fas fa-charging-station"></i>
+                <h4>Renewable Energy</h4>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us" style="background: var(--primary); color: white;">
+        <div class="container">
+            <h2 style="color: white;">Why Choose Precellens</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <ul style="list-style-type: none; padding: 0;">
+                    <li style="margin-bottom: 1.5rem; padding-left: 2rem; position: relative;">
+                        <i class="fas fa-check" style="position: absolute; left: 0; color: var(--secondary);"></i>
+                        Locally rooted, globally inspired solutions
+                    </li>
+                    <li style="margin-bottom: 1.5rem; padding-left: 2rem; position: relative;">
+                        <i class="fas fa-check" style="position: absolute; left: 0; color: var(--secondary);"></i>
+                        Dedicated team of multi-disciplinary engineers
+                    </li>
+                    <li style="margin-bottom: 1.5rem; padding-left: 2rem; position: relative;">
+                        <i class="fas fa-check" style="position: absolute; left: 0; color: var(--secondary);"></i>
+                        Emphasis on safety, compliance, and sustainability
+                    </li>
+                    <li style="margin-bottom: 1.5rem; padding-left: 2rem; position: relative;">
+                        <i class="fas fa-check" style="position: absolute; left: 0; color: var(--secondary);"></i>
+                        Custom-engineered designs to suit each project
+                    </li>
+                    <li style="margin-bottom: 1.5rem; padding-left: 2rem; position: relative;">
+                        <i class="fas fa-check" style="position: absolute; left: 0; color: var(--secondary);"></i>
+                        Competitive pricing without compromising quality
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2>Our Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="images/blog3.jpeg" alt="coming soon">
+                <div class="project-overlay">
+                    <h3>Coming soon</h3>
+                    <p>coming soon</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="blog" style="background: var(--light);">
+        <div class="container">
+            <h2>Latest Insights</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <img src="images/blog5.jpeg" alt="Energy Efficiency in Buildings">
+                    <div class="blog-content">
+                        <div class="blog-date">June 15, 2023</div>
+                        <h3>The Future of Energy Efficiency in Commercial Buildings</h3>
+                        <p class="blog-excerpt">Exploring the latest technologies and strategies for reducing energy consumption in large-scale developments...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="images/blog4.jpeg" alt="Solar Power in Kenya">
+                    <div class="blog-content">
+                        <div class="blog-date">May 28, 2023</div>
+                        <h3>Solar Power Adoption in Kenya: Trends and Opportunities</h3>
+                        <p class="blog-excerpt">How Kenya is leading East Africa in renewable energy adoption and what this means for businesses...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="images/blog1.jpeg" alt="Smart Building Technologies">
+                    <div class="blog-content">
+                        <div class="blog-date">April 10, 2023</div>
+                        <h3>Smart Building Technologies Transforming Kenyan Infrastructure</h3>
+                        <p class="blog-excerpt">An overview of the IoT and automation solutions that are making buildings smarter and more efficient...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's Build Something Brilliant</h3>
+                <p>Have a project in mind or need technical advice? We'd love to hear from you.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Head Office</h4>
+                            <p> Nairobi, Kenya</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@precellens.com<br>sales@precellens.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+254 7-05046-110<br>+254 720 123456</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h4 style="color: var(--primary); margin-top: 2rem;">Business Hours</h4>
+                <p>Monday - Friday: 8:00 AM - 5:00 PM<br>
+                Saturday: 9:00 AM - 1:00 PM<br>
+                Sunday: Closed</p>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form id="contactForm" action="process_form.php" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" class="form-control" required>
+                            <option value="">Select a subject</option>
+                            <option value="Electrical Engineering">Electrical Engineering</option>
+                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+                            <option value="Energy Solutions">Energy Solutions</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Careers">Careers</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" class="form-control" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.808559538313!2d36.80821531475397!3d-1.2923595359799165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d664f9d8d7%3A0x7e33f5a9cb2e5b0e!2sABC%20Place!5e0!3m2!1sen!2ske!4v1623935400000!5m2!1sen!2ske" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="images/logo-white.png" alt="Precellens Logo">
+                    <div class="footer-logo-text">Precellens<span>.</span></div>
+                </div>
+                <p>Pioneering sustainable infrastructure across Kenya through innovative engineering solutions.</p>
+                <div class="footer-social" style="margin-top: 1.5rem;">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section footer-links">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Electrical Engineering</a></li>
+                    <li><a href="#">Mechanical Engineering</a></li>
+                    <li><a href="#">Energy Solutions</a></li>
+                    <li><a href="#">Consultancy</a></li>
+                    <li><a href="#">Maintenance</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i>  Nairobi, Kenya</p>
+                <p><i class="fas fa-phone-alt"></i> +254 7-05046-110</p>
+                <p><i class="fas fa-envelope"></i> info@precellens.com</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Precellens Consultancy Ltd. All rights reserved.</p>
+            <p>Let's build a better tomorrow — engineered by Precellens.</p>
+        </div>
+    </footer>
+
+</body>
+  <scripts src = 'index.js'></scripts>
+</html>
