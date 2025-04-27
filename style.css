@@ -1,6 +1,6 @@
 :root {
     --primary: #001F3F;       /* Navy Blue */
-    --secondary: #87CEEB;     /* Sky Blue */
+    --secondary: #009FE3;     /* Sky Blue */
     --accent: #0074D9;        /* Brighter blue for accents */
     --light: #F5F5F5;
     --dark: #333333;
@@ -492,7 +492,7 @@ textarea.form-control {
 
 /* Footer */
 footer {
-    background: var(--dark);
+    background: #000000; /* Changed from var(--dark) to pure black */
     color: white;
     padding: 4rem 0 2rem;
 }
@@ -508,7 +508,7 @@ footer {
 }
 
 .footer-section h3 {
-    color: var(--secondary);
+    color: #87CEEB; /* Sky blue - kept from var(--secondary) */
     margin-bottom: 1.5rem;
     font-size: 1.3rem;
     position: relative;
@@ -522,7 +522,7 @@ footer {
     bottom: 0;
     width: 40px;
     height: 2px;
-    background: var(--secondary);
+    background: #87CEEB; /* Sky blue - kept from var(--secondary) */
 }
 
 .footer-logo {
@@ -539,10 +539,11 @@ footer {
 .footer-logo-text {
     font-size: 1.3rem;
     font-weight: bold;
+    color: white; /* Ensured logo text is white */
 }
 
 .footer-logo-text span {
-    color: var(--secondary);
+    color: #87CEEB; /* Sky blue accent - kept from var(--secondary) */
 }
 
 .footer-links ul {
@@ -555,24 +556,25 @@ footer {
 }
 
 .footer-links a {
-    color: #ccc;
+    color: #cccccc; /* Light gray for links */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .footer-links a:hover {
-    color: var(--secondary);
+    color: #87CEEB; /* Sky blue on hover */
 }
 
 .footer-contact p {
     margin-bottom: 1rem;
     display: flex;
     align-items: flex-start;
+    color: #eeeeee; /* Slightly off-white for better readability */
 }
 
 .footer-contact i {
     margin-right: 10px;
-    color: var(--secondary);
+    color: #87CEEB; /* Sky blue icons */
     margin-top: 3px;
 }
 
@@ -582,7 +584,7 @@ footer {
     justify-content: center;
     width: 36px;
     height: 36px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.1); /* Subtle white overlay */
     color: white;
     border-radius: 50%;
     margin-right: 10px;
@@ -590,16 +592,16 @@ footer {
 }
 
 .footer-social a:hover {
-    background: var(--secondary);
+    background: #87CEEB; /* Sky blue on hover */
     transform: translateY(-3px);
 }
 
 .copyright {
     margin-top: 3rem;
     padding-top: 2rem;
-    border-top: 1px solid #444;
+    border-top: 1px solid #333333; /* Darker border for contrast */
     text-align: center;
-    color: #aaa;
+    color: #aaaaaa; /* Gray text */
     font-size: 0.9rem;
 }
 
