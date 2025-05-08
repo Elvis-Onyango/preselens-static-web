@@ -96,3 +96,17 @@ window.addEventListener('scroll', function() {
         header.classList.remove('scrolled');
     }
 });
+
+
+const sectorCards = document.querySelectorAll('.sector-card');
+sectorCards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+});
+
+
+if (elementPosition < screenPosition) {
+    element.style.opacity = '1';
+    element.style.transform = 'translateY(0)';
+}
