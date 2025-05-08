@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Praecellens Consultancy Ltd | Engineering Solutions Kenya</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="style.css">
+    <title>Our Projects | Praecellens Consultancy</title>
 </head>
 <body>
-    <!-- Header -->
+     <!-- Header -->
     <header>
         <div class="container">
             <div class="nav-container">
@@ -35,104 +33,79 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Powering Progress, Engineering the Future</h1>
-            <p>Electrical, Mechanical & Energy Engineering solutions designed for impact — proudly Kenyan, globally inspired.</p>
-            <div class="btn-container">
-                <a href="contact.html" class="btn">Get in Touch</a>
-                <a href="services.html" class="btn btn-outline">Our Services</a>
-            </div>
+    <!-- Projects Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Projects</h1>
+            <p>Engineering solutions that make a difference</p>
         </div>
     </section>
 
-    <!-- Featured Sections -->
-    <section class="featured-section">
+    <!-- Projects Section -->
+    <section class="projects-section">
         <div class="container">
-            <div class="featured-grid">
-                <div class="featured-card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Electrical Engineering</h3>
-                    <p>Innovative power solutions for modern infrastructure and industrial needs.</p>
-                    <a href="services.html#electrical" class="btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                
-                <div class="featured-card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Mechanical Systems</h3>
-                    <p>Efficient HVAC, plumbing and building service solutions.</p>
-                    <a href="services.html#mechanical" class="btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                
-                <div class="featured-card">
-                    <i class="fas fa-solar-panel"></i>
-                    <h3>Energy Solutions</h3>
-                    <p>Sustainable energy systems for a greener future.</p>
-                    <a href="services.html#energy" class="btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="electrical">Electrical</button>
+                <button class="filter-btn" data-filter="mechanical">Mechanical</button>
+                <button class="filter-btn" data-filter="energy">Energy</button>
             </div>
-        </div>
-    </section>
-
-    <!-- About Preview -->
-    <section class="about-preview">
-        <div class="container">
-            <div class="preview-content">
-                <div class="preview-text">
-                    <h2>Engineering Excellence Since 2023</h2>
-                    <p>Praecellens is a Kenyan-based engineering firm specializing in integrated engineering solutions. We combine technical expertise with innovative thinking to deliver exceptional results.</p>
-                    <a href="about.html" class="btn">Our Story</a>
-                </div>
-                <div class="preview-image">
-                    <img src="images/about-preview.jpg" alt="Our Team">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Preview -->
-    <section class="projects-preview">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <p class="section-subtitle">Explore some of our recent engineering solutions</p>
             
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" data-category="electrical">
                     <img src="images/project1.jpg" alt="Commercial Project">
                     <div class="project-overlay">
                         <h3>Nairobi Commercial Complex</h3>
-                        <p>Full electrical and mechanical design</p>
-                        <a href="projects.html" class="btn btn-small">View Project</a>
+                        <p>Full electrical system design and implementation</p>
+                        <a href="project-details.html" class="btn btn-small">View Details</a>
                     </div>
                 </div>
                 
-                <div class="project-card">
+                <div class="project-card" data-category="mechanical">
                     <img src="images/project2.jpg" alt="Industrial Project">
                     <div class="project-overlay">
                         <h3>Mombasa Industrial Plant</h3>
-                        <p>Energy efficiency upgrade</p>
-                        <a href="projects.html" class="btn btn-small">View Project</a>
+                        <p>HVAC and mechanical systems upgrade</p>
+                        <a href="project-details.html" class="btn btn-small">View Details</a>
                     </div>
                 </div>
-            </div>
-            
-            <div class="text-center">
-                <a href="projects.html" class="btn btn-outline">View All Projects</a>
+                
+                <div class="project-card" data-category="energy">
+                    <img src="images/project3.jpg" alt="Solar Project">
+                    <div class="project-overlay">
+                        <h3>Kisumu Solar Farm</h3>
+                        <p>5MW solar PV installation</p>
+                        <a href="project-details.html" class="btn btn-small">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Add more project cards as needed -->
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
         <div class="container">
-            <h2>Ready to Start Your Project?</h2>
-            <p>Contact us today for a free consultation with our engineering team.</p>
-            <a href="contact.html" class="btn">Get in Touch</a>
+            <h2>What Our Clients Say</h2>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Praecellens delivered exceptional electrical engineering services for our new office complex. Their attention to detail and innovative solutions exceeded our expectations."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>James Mwangi</h4>
+                        <p>CEO, Acme Developments</p>
+                    </div>
+                </div>
+                
+                <!-- Add more testimonials as needed -->
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
+        <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -186,7 +159,5 @@
             </div>
         </div>
     </footer>
-
-    <script src="index.js"></script>
 </body>
 </html>

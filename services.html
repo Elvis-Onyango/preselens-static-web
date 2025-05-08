@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Praecellens Consultancy Ltd | Engineering Solutions Kenya</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="style.css">
+    <title>Our Services | Praecellens Consultancy</title>
 </head>
 <body>
-    <!-- Header -->
+     <!-- Header -->
     <header>
         <div class="container">
             <div class="nav-container">
@@ -35,90 +33,92 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Powering Progress, Engineering the Future</h1>
-            <p>Electrical, Mechanical & Energy Engineering solutions designed for impact — proudly Kenyan, globally inspired.</p>
-            <div class="btn-container">
-                <a href="contact.html" class="btn">Get in Touch</a>
-                <a href="services.html" class="btn btn-outline">Our Services</a>
-            </div>
+    <!-- Services Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Comprehensive engineering solutions for your projects</p>
         </div>
     </section>
 
-    <!-- Featured Sections -->
-    <section class="featured-section">
+    <!-- Services Section -->
+    <section id="services">
         <div class="container">
-            <div class="featured-grid">
-                <div class="featured-card">
-                    <i class="fas fa-bolt"></i>
+            <div class="services-grid">
+                <div class="service-card" id="electrical">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
                     <h3>Electrical Engineering</h3>
-                    <p>Innovative power solutions for modern infrastructure and industrial needs.</p>
-                    <a href="services.html#electrical" class="btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Power distribution (LV & MV)</li>
+                        <li><i class="fas fa-check"></i> Interior & exterior lighting systems</li>
+                        <li><i class="fas fa-check"></i> Backup power systems (UPS & generators)</li>
+                        <li><i class="fas fa-check"></i> Earthing and lightning protection</li>
+                        <li><i class="fas fa-check"></i> Energy audits and power factor correction</li>
+                    </ul>
                 </div>
                 
-                <div class="featured-card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Mechanical Systems</h3>
-                    <p>Efficient HVAC, plumbing and building service solutions.</p>
-                    <a href="services.html#mechanical" class="btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <div class="service-card" id="mechanical">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Mechanical Engineering</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> HVAC systems (design & implementation)</li>
+                        <li><i class="fas fa-check"></i> Plumbing and drainage networks</li>
+                        <li><i class="fas fa-check"></i> Fire detection & suppression systems</li>
+                        <li><i class="fas fa-check"></i> Building services integration</li>
+                        <li><i class="fas fa-check"></i> Lifts, escalators & vertical transport</li>
+                    </ul>
                 </div>
                 
-                <div class="featured-card">
-                    <i class="fas fa-solar-panel"></i>
+                <div class="service-card" id="energy">
+                    <div class="service-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
                     <h3>Energy Solutions</h3>
-                    <p>Sustainable energy systems for a greener future.</p>
-                    <a href="services.html#energy" class="btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Solar PV, hybrid & off-grid systems</li>
+                        <li><i class="fas fa-check"></i> Energy efficiency & management</li>
+                        <li><i class="fas fa-check"></i> Battery storage & smart grid integration</li>
+                        <li><i class="fas fa-check"></i> Feasibility studies & technical advisory</li>
+                        <li><i class="fas fa-check"></i> Compliance & environmental assessments</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Preview -->
-    <section class="about-preview">
+    <!-- Process Section -->
+    <section class="process-section">
         <div class="container">
-            <div class="preview-content">
-                <div class="preview-text">
-                    <h2>Engineering Excellence Since 2023</h2>
-                    <p>Praecellens is a Kenyan-based engineering firm specializing in integrated engineering solutions. We combine technical expertise with innovative thinking to deliver exceptional results.</p>
-                    <a href="about.html" class="btn">Our Story</a>
-                </div>
-                <div class="preview-image">
-                    <img src="images/about-preview.jpg" alt="Our Team">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Preview -->
-    <section class="projects-preview">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <p class="section-subtitle">Explore some of our recent engineering solutions</p>
+            <h2>Our Process</h2>
             
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="images/project1.jpg" alt="Commercial Project">
-                    <div class="project-overlay">
-                        <h3>Nairobi Commercial Complex</h3>
-                        <p>Full electrical and mechanical design</p>
-                        <a href="projects.html" class="btn btn-small">View Project</a>
-                    </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>We begin by understanding your project requirements and objectives.</p>
                 </div>
                 
-                <div class="project-card">
-                    <img src="images/project2.jpg" alt="Industrial Project">
-                    <div class="project-overlay">
-                        <h3>Mombasa Industrial Plant</h3>
-                        <p>Energy efficiency upgrade</p>
-                        <a href="projects.html" class="btn btn-small">View Project</a>
-                    </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Design</h3>
+                    <p>Our team creates customized engineering solutions for your needs.</p>
                 </div>
-            </div>
-            
-            <div class="text-center">
-                <a href="projects.html" class="btn btn-outline">View All Projects</a>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Implementation</h3>
+                    <p>We execute the project with precision and attention to detail.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Support</h3>
+                    <p>We provide ongoing maintenance and support services.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -126,13 +126,13 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Ready to Start Your Project?</h2>
-            <p>Contact us today for a free consultation with our engineering team.</p>
-            <a href="contact.html" class="btn">Get in Touch</a>
+            <h2>Ready to Discuss Your Project?</h2>
+            <p>Contact us today to learn how we can help with your engineering needs.</p>
+            <a href="contact.html" class="btn">Get a Free Consultation</a>
         </div>
     </section>
 
-    <!-- Footer -->
+        <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -186,7 +186,5 @@
             </div>
         </div>
     </footer>
-
-    <script src="index.js"></script>
 </body>
 </html>
