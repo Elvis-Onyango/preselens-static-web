@@ -1,314 +1,513 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- In your <head> -->
-  
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="style.css">
+    <!-- Same head content as index.html -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services | Praecellens Consultancy</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#001F3F',
+                        secondary: '#009FE3',
+                        accent: '#0074D9',
+                        light: '#F5F5F5',
+                        dark: '#000000',
+                        gray: '#6D6D6D',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'slide-in': 'slideIn 0.7s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideIn: {
+                            '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
+    
+    <style type="text/tailwindcss">
+        @layer components {
+            .btn-primary {
+                @apply inline-flex items-center justify-center bg-secondary text-white px-8 py-3 rounded-full font-semibold 
+                       transition-all duration-300 ease-out border-2 border-secondary shadow-lg hover:bg-transparent 
+                       hover:text-secondary hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-2 
+                       focus:ring-secondary focus:ring-opacity-50;
+            }
+            
+            .btn-outline {
+                @apply inline-flex items-center justify-center bg-transparent text-secondary px-8 py-3 rounded-full 
+                       font-semibold transition-all duration-300 ease-out border-2 border-secondary shadow-lg 
+                       hover:bg-secondary hover:text-white hover:-translate-y-1 hover:shadow-xl focus:outline-none 
+                       focus:ring-2 focus:ring-secondary focus:ring-opacity-50;
+            }
+            
+            .section-title {
+                @apply text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 relative;
+            }
+            
+            .section-title::after {
+                @apply content-[''] block w-20 h-1 bg-secondary mx-auto mt-6;
+            }
+            
+            .card-hover {
+                @apply transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl;
+            }
+            
+            .nav-link {
+                @apply relative text-primary font-medium hover:text-secondary transition-colors duration-200 
+                       after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 
+                       after:bg-secondary after:transition-all after:duration-300 hover:after:w-full;
+            }
+        }
+    </style>
 </head>
-<body>
-     <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="nav-container">
-                <div class="logo">
-                    <img src="images/logo.png" alt="Praecellens Logo">
-                    <div class="logo-text">Praecellens<span>.</span></div>
-                </div>
+<body class="font-poppins text-dark bg-white antialiased">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50 transition-all duration-300 h-24">
+        <div class="container mx-auto px-6 h-full">
+            <div class="flex justify-between items-center h-full">
+                <!-- Logo -->
+                <a href="index.html" class="logo flex items-center group">
+                    <img src="images/logo.png" alt="Praecellens Logo" 
+                         class="h-16 transition-all duration-300 group-hover:scale-105">
+                    <span class="logo-text text-2xl font-bold text-primary ml-4 group-hover:text-secondary transition-colors">
+                        Praecellens<span class="text-secondary">.</span>
+                    </span>
+                </a>
                 
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn md:hidden text-2xl text-primary focus:outline-none" 
+                        id="mobileMenuBtn" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </button>
                 
-                <nav id="mainNav">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:block" id="mainNav">
+                    <ul class="flex space-x-8">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="projects.html" class="nav-link">Projects</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav hidden md:hidden absolute top-24 left-0 w-full bg-white shadow-lg py-4 px-6" id="mobileNav">
+            <ul class="space-y-4">
+                <li><a href="index.html" class="block py-2 text-primary hover:text-secondary transition-colors">Home</a></li>
+                <li><a href="about.html" class="block py-2 text-primary hover:text-secondary transition-colors">About</a></li>
+                <li><a href="services.html" class="block py-2 text-primary hover:text-secondary transition-colors">Services</a></li>
+                <li><a href="projects.html" class="block py-2 text-primary hover:text-secondary transition-colors">Projects</a></li>
+                <li><a href="contact.html" class="block py-2 text-primary hover:text-secondary transition-colors">Contact</a></li>
+            </ul>
+        </div>
     </header>
 
-    <!-- Services Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <h1>Our Services</h1>
-            <p>Comprehensive engineering solutions for your projects</p>
+    <!-- Services Hero Section -->
+    <section class="relative h-96 flex items-center justify-center text-center text-white pt-24">
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/80 to-primary/90"></div>
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/blog4.jpeg')"></div>
+        
+        <div class="container relative z-10 px-4">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in">Our Services</h1>
+            <p class="text-xl md:text-2xl max-w-2xl mx-auto animate-fade-in animation-delay-100">
+                Comprehensive engineering solutions for your projects
+            </p>
         </div>
     </section>
 
     <!-- Key Sectors Section -->
-<section class="sectors-section">
-    <div class="container">
-        <h2 class="section-title">Key Sectors We Serve</h2>
-        <p class="section-subtitle">Delivering specialized engineering solutions across diverse industries</p>
-        
-        <div class="sectors-grid">
-            <div class="sector-card">
-                <div class="sector-icon">
-                    <i class="fas fa-building"></i>
-                </div>
-                <h3>Commercial Developments</h3>
-                <p>Office towers, shopping malls, and mixed-use complexes with efficient MEP systems</p>
-            </div>
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title animate-slide-in">Key Sectors We Serve</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12 text-lg animate-slide-in animation-delay-100">
+                Delivering specialized engineering solutions across diverse industries
+            </p>
             
-            <div class="sector-card">
-                <div class="sector-icon">
-                    <i class="fas fa-home"></i>
-                </div>
-                <h3>Residential Estates</h3>
-                <p>Modern housing projects with sustainable infrastructure solutions</p>
-            </div>
-            
-            <div class="sector-card">
-                <div class="sector-icon">
-                    <i class="fas fa-hospital"></i>
-                </div>
-                <h3>Hospitals & Healthcare</h3>
-                <p>Critical facility systems for medical centers and clinics</p>
-            </div>
-            
-            <div class="sector-card">
-                <div class="sector-icon">
-                    <i class="fas fa-industry"></i>
-                </div>
-                <h3>Industrial Plants</h3>
-                <p>Robust engineering for manufacturing and processing facilities</p>
-            </div>
-            
-            <div class="sector-card">
-                <div class="sector-icon">
-                    <i class="fas fa-landmark"></i>
-                </div>
-                <h3>Government Projects</h3>
-                <p>Infrastructure development for public institutions</p>
-            </div>
-            
-            <div class="sector-card">
-                <div class="sector-icon">
-                    <i class="fas fa-school"></i>
-                </div>
-                <h3>Educational Campuses</h3>
-                <p>Smart solutions for universities and schools</p>
-            </div>
-            
-            <div class="sector-card">
-                <div class="sector-icon">
-                    <i class="fas fa-solar-panel"></i>
-                </div>
-                <h3>Renewable Energy</h3>
-                <p>Solar, wind and hybrid power generation systems</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <div class="services-grid">
-                <div class="service-card" id="electrical">
-                    <div class="service-icon">
-                        <i class="fas fa-bolt"></i>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Commercial -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover animate-slide-up animation-delay-150">
+                    <div class="text-4xl text-secondary mb-4">
+                        <i class="fas fa-building"></i>
                     </div>
-                    <h3>Electrical Engineering</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Power distribution (LV & MV)</li>
-                        <li><i class="fas fa-check"></i> Interior & exterior lighting systems</li>
-                        <li><i class="fas fa-check"></i> Backup power systems (UPS & generators)</li>
-                        <li><i class="fas fa-check"></i> Earthing and lightning protection</li>
-                        <li><i class="fas fa-check"></i> Energy audits and power factor correction</li>
-                    </ul>
+                    <h3 class="text-xl font-bold text-primary mb-3">Commercial</h3>
+                    <p class="text-gray-600">
+                        Office towers, shopping malls, and mixed-use complexes with efficient MEP systems.
+                    </p>
                 </div>
                 
-                <div class="service-card" id="mechanical">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
+                <!-- Residential -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover animate-slide-up animation-delay-200">
+                    <div class="text-4xl text-secondary mb-4">
+                        <i class="fas fa-home"></i>
                     </div>
-                    <h3>Mechanical Engineering</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> HVAC systems (design & implementation)</li>
-                        <li><i class="fas fa-check"></i> Plumbing and drainage networks</li>
-                        <li><i class="fas fa-check"></i> Fire detection & suppression systems</li>
-                        <li><i class="fas fa-check"></i> Building services integration</li>
-                        <li><i class="fas fa-check"></i> Lifts, escalators & vertical transport</li>
-                    </ul>
+                    <h3 class="text-xl font-bold text-primary mb-3">Residential</h3>
+                    <p class="text-gray-600">
+                        Modern housing projects with sustainable infrastructure solutions.
+                    </p>
                 </div>
                 
-                <div class="service-card" id="energy">
-                    <div class="service-icon">
-                        <i class="fas fa-solar-panel"></i>
+                <!-- Industrial -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover animate-slide-up animation-delay-250">
+                    <div class="text-4xl text-secondary mb-4">
+                        <i class="fas fa-industry"></i>
                     </div>
-                    <h3>Energy Solutions</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Solar PV, hybrid & off-grid systems</li>
-                        <li><i class="fas fa-check"></i> Energy efficiency & management</li>
-                        <li><i class="fas fa-check"></i> Battery storage & smart grid integration</li>
-                        <li><i class="fas fa-check"></i> Feasibility studies & technical advisory</li>
-                        <li><i class="fas fa-check"></i> Compliance & environmental assessments</li>
-                    </ul>
+                    <h3 class="text-xl font-bold text-primary mb-3">Industrial</h3>
+                    <p class="text-gray-600">
+                        Robust engineering for manufacturing and processing facilities.
+                    </p>
+                </div>
+                
+                <!-- Healthcare -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover animate-slide-up animation-delay-300">
+                    <div class="text-4xl text-secondary mb-4">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Healthcare</h3>
+                    <p class="text-gray-600">
+                        Critical facility systems for medical centers and clinics.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section - Redesigned -->
-    <section class="why-us">
-        <div class="container">
-            <h2 class="section-title">Why us</h2>
-            <p class="section-subtitle">We provide innovative and locally tailored solutions inspired by global trends and technologies.</p>
-            
-            <div class="features-grid">
-                <!-- Feature 1 -->
-                <div class="feature-card">
-                    <div class="feature-icon-container">
-                        <i class="fas fa-globe-africa feature-icon"></i>
+    <!-- Electrical Engineering Section -->
+    <section id="electrical" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 animate-slide-in">
+                    <h2 class="text-3xl font-bold text-primary mb-6">Electrical Engineering</h2>
+                    <p class="text-gray-600 mb-6">
+                        Our electrical engineering services deliver safe, efficient, and reliable power solutions for all types of buildings and infrastructure. We combine technical expertise with innovative approaches to meet your project's specific requirements.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-primary">Power Distribution</h4>
+                                <p class="text-gray-600">LV & MV systems design and implementation</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-primary">Lighting Design</h4>
+                                <p class="text-gray-600">Interior & exterior lighting solutions</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-primary">Backup Power</h4>
+                                <p class="text-gray-600">UPS, generators and power management</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-primary">Protection Systems</h4>
+                                <p class="text-gray-600">Earthing and lightning protection</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Dedicated Team of Engineers</h3>
-                    <p>Our multidisciplinary engineers work tirelessly to ensure the success of your projects.</p>
-                    <div class="feature-underline"></div>
+                    <a href="contact.html" class="btn-primary">
+                        Get a Quote <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
                 
-                <!-- Feature 2 -->
-                <div class="feature-card">
-                    <div class="feature-icon-container">
-                        <i class="fas fa-users-cog feature-icon"></i>
+                <div class="lg:w-1/2 animate-slide-in animation-delay-100">
+                    <div class="rounded-xl overflow-hidden shadow-xl">
+                        <img src="images/blog5.jpg" alt="Electrical Engineering" class="w-full h-auto">
                     </div>
-                    <h3>Multidisciplinary Team</h3>
-                    <p>Our certified electrical, mechanical and energy engineers collaborate to deliver integrated solutions under one roof.</p>
-                    <div class="feature-underline"></div>
-                </div>
-                
-                <!-- Feature 3 -->
-                <div class="feature-card">
-                    <div class="feature-icon-container">
-                        <i class="fas fa-clipboard-check feature-icon"></i>
-                    </div>
-                    <h3>Safety, Compliance, & Sustainability</h3>
-                    <p>We prioritize safety, compliance, and sustainability in every project we undertake.</p>
-                    <div class="feature-underline"></div>
-                </div>
-                
-                <!-- Feature 4 -->
-                <div class="feature-card">
-                    <div class="feature-icon-container">
-                        <i class="fas fa-chart-line feature-icon"></i>
-                    </div>
-                    <h3>Custom-Engineered Designs</h3>
-                    <p>Every project receives a tailored design to meet the specific needs and requirements of our clients.</p>
-                    <div class="feature-underline"></div>
                 </div>
             </div>
-            
-            <div class="why-us-cta">
-                <p>Ready to discuss your project?</p>
-                <a href="#contact" class="btn">Get a Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Mechanical Engineering Section -->
+    <section id="mechanical" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 order-2 lg:order-1 animate-slide-in animation-delay-100">
+                    <div class="rounded-xl overflow-hidden shadow-xl">
+                        <img src="images/building2.jpg" alt="Mechanical Engineering" class="w-full h-auto">
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 order-1 lg:order-2 animate-slide-in">
+                    <h2 class="text-3xl font-bold text-primary mb-6">Mechanical Engineering</h2>
+                    <p class="text-gray-600 mb-6">
+                        Our mechanical engineering services ensure optimal building performance, comfort, and efficiency. We design systems that integrate seamlessly with architectural vision while meeting functional requirements.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-primary">HVAC Systems</h4>
+                                <p class="text-gray-600">Heating, ventilation and air conditioning</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-primary">Plumbing</h4>
+                                <p class="text-gray-600">Water supply and drainage systems</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-primary">Fire Protection</h4>
+                                <p class="text-gray-600">Detection and suppression systems</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-primary">Vertical Transport</h4>
+                                <p class="text-gray-600">Lifts, escalators and moving walkways</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn-primary">
+                        Get a Quote <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Energy Solutions Section -->
+    <section id="energy" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 animate-slide-in">
+                    <h2 class="text-3xl font-bold text-primary mb-6">Energy Solutions</h2>
+                    <p class="text-gray-600 mb-6">
+                        Our energy solutions combine sustainability with reliability, helping clients reduce costs and environmental impact. We design systems that meet today's needs while preparing for future energy demands.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-primary">Solar PV</h4>
+                                <p class="text-gray-600">Grid-tied and off-grid solar systems</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-primary">Energy Efficiency</h4>
+                                <p class="text-gray-600">Audits, retrofits and optimization</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-primary">Battery Storage</h4>
+                                <p class="text-gray-600">Energy storage solutions</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-primary">Hybrid Systems</h4>
+                                <p class="text-gray-600">Integrated renewable energy solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn-primary">
+                        Get a Quote <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="lg:w-1/2 animate-slide-in animation-delay-100">
+                    <div class="rounded-xl overflow-hidden shadow-xl">
+                        <img src="images/blog6.jpg" alt="Energy Solutions" class="w-full h-auto">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Process Section -->
-    <section class="process-section">
-        <div class="container">
-            <h2>Our Process</h2>
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title animate-slide-in">Our Process</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12 text-lg animate-slide-in animation-delay-100">
+                A structured approach to delivering exceptional engineering solutions
+            </p>
             
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Consultation</h3>
-                    <p>We begin by understanding your project requirements and objectives.</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center animate-slide-up animation-delay-150">
+                    <div class="w-20 h-20 bg-secondary text-white text-2xl font-bold rounded-full flex items-center justify-center mx-auto mb-6">1</div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Consultation</h3>
+                    <p class="text-gray-600">
+                        We begin by understanding your project requirements, objectives and constraints.
+                    </p>
                 </div>
                 
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Design</h3>
-                    <p>Our team creates customized engineering solutions for your needs.</p>
+                <!-- Step 2 -->
+                <div class="text-center animate-slide-up animation-delay-200">
+                    <div class="w-20 h-20 bg-secondary text-white text-2xl font-bold rounded-full flex items-center justify-center mx-auto mb-6">2</div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Design</h3>
+                    <p class="text-gray-600">
+                        Our team creates customized engineering solutions for your specific needs.
+                    </p>
                 </div>
                 
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Implementation</h3>
-                    <p>We execute the project with precision and attention to detail.</p>
+                <!-- Step 3 -->
+                <div class="text-center animate-slide-up animation-delay-250">
+                    <div class="w-20 h-20 bg-secondary text-white text-2xl font-bold rounded-full flex items-center justify-center mx-auto mb-6">3</div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Implementation</h3>
+                    <p class="text-gray-600">
+                        We execute the project with precision and attention to detail.
+                    </p>
                 </div>
                 
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3>Support</h3>
-                    <p>We provide ongoing maintenance and support services.</p>
+                <!-- Step 4 -->
+                <div class="text-center animate-slide-up animation-delay-300">
+                    <div class="w-20 h-20 bg-secondary text-white text-2xl font-bold rounded-full flex items-center justify-center mx-auto mb-6">4</div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Support</h3>
+                    <p class="text-gray-600">
+                        We provide ongoing maintenance and support services.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Discuss Your Project?</h2>
-            <p>Contact us today to learn how we can help with your engineering needs.</p>
-            <a href="contact.html" class="btn">Get a Free Consultation</a>
+    <section class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 animate-slide-up">Ready to Discuss Your Project?</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-8 animate-slide-up animation-delay-100">
+                Contact us today to learn how we can help with your engineering needs.
+            </p>
+            <a href="contact.html" class="btn-primary bg-white text-primary hover:bg-transparent hover:text-white border-white animate-slide-up animation-delay-200">
+                Get a Free Consultation <i class="fas fa-arrow-right ml-2"></i>
+            </a>
         </div>
     </section>
 
         <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">
-                        <img src="images/logo.png" alt="Praecellens Logo">
-                        <div class="footer-logo-text">Praecellens<span>.</span></div>
+    <footer class="bg-dark text-white pt-20 pb-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- About -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img src="images/logo-white.png" alt="Praecellens Logo" class="h-12 mr-4">
+                        <span class="text-2xl font-bold">Praecellens<span class="text-secondary">.</span></span>
                     </div>
-                    <p>Pioneering sustainable infrastructure across Kenya through innovative engineering solutions.</p>
+                    <p class="text-white/80 mb-6">
+                        Pioneering sustainable infrastructure across Kenya through innovative engineering solutions.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-icon bg-white/10 hover:bg-secondary w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon bg-white/10 hover:bg-secondary w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon bg-white/10 hover:bg-secondary w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon bg-white/10 hover:bg-secondary w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
                 </div>
                 
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Our Services</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-secondary">
+                        Quick Links
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-white/80 hover:text-secondary transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-white/80 hover:text-secondary transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="text-white/80 hover:text-secondary transition-colors">Our Services</a></li>
+                        <li><a href="projects.html" class="text-white/80 hover:text-secondary transition-colors">Projects</a></li>
+                        <li><a href="contact.html" class="text-white/80 hover:text-secondary transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-links">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#">Electrical Engineering</a></li>
-                        <li><a href="#">Mechanical Engineering</a></li>
-                        <li><a href="#">Energy Solutions</a></li>
-                        <li><a href="#">Consultancy</a></li>
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-secondary">
+                        Services
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="services.html#electrical" class="text-white/80 hover:text-secondary transition-colors">Electrical Engineering</a></li>
+                        <li><a href="services.html#mechanical" class="text-white/80 hover:text-secondary transition-colors">Mechanical Engineering</a></li>
+                        <li><a href="services.html#energy" class="text-white/80 hover:text-secondary transition-colors">Energy Solutions</a></li>
+                        <li><a href="services.html" class="text-white/80 hover:text-secondary transition-colors">Consultancy</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-contact">
-                    <h4>Contact Info</h4>
-                    <p><i class="fas fa-map-marker-alt"></i>Nairobi,Kenya</p>
-                    <p><i class="fas fa-phone-alt"></i> +254 705 046 110</p>
-                    <p><i class="fas fa-envelope"></i> info@praecellens.com</p>
-                    
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-secondary">
+                        Contact Info
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-secondary mr-4 mt-1"></i>
+                            <span class="text-white/80">Nairobi, Kenya</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-secondary mr-4 mt-1"></i>
+                            <span class="text-white/80">+254 705 046 110</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-secondary mr-4 mt-1"></i>
+                            <span class="text-white/80">info@praecellens.com</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="copyright">
+            <div class="border-t border-white/10 pt-8 text-center text-white/60">
                 <p>&copy; 2025 Praecellens Consultancy Ltd. All rights reserved.</p>
             </div>
         </div>
     </footer>
-     <script src="index.js"></script>
+
+    <script src="index.html">
+    </script>
 </body>
 </html>

@@ -1,128 +1,300 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Praecellens Consultancy</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#001F3F',
+                        secondary: '#009FE3',
+                        accent: '#0074D9',
+                        light: '#F5F5F5',
+                        dark: '#000000',
+                        gray: '#6D6D6D',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'slide-up': 'slideUp 0.6s ease-out forwards',
+                        'slide-in': 'slideIn 0.7s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideIn: {
+                            '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
+    
+    <style>
+        @layer components {
+            .btn-primary {
+                @apply inline-flex items-center justify-center bg-secondary text-white px-8 py-3 rounded-full font-semibold 
+                       transition-all duration-300 ease-out border-2 border-secondary shadow-lg hover:bg-transparent 
+                       hover:text-secondary hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-2 
+                       focus:ring-secondary focus:ring-opacity-50;
+            }
+            
+            .btn-outline {
+                @apply inline-flex items-center justify-center bg-transparent text-secondary px-8 py-3 rounded-full 
+                       font-semibold transition-all duration-300 ease-out border-2 border-secondary shadow-lg 
+                       hover:bg-secondary hover:text-white hover:-translate-y-1 hover:shadow-xl focus:outline-none 
+                       focus:ring-2 focus:ring-secondary focus:ring-opacity-50;
+            }
+            
+            .section-title {
+                @apply text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 relative;
+            }
+            
+            .section-title::after {
+                @apply content-[''] block w-20 h-1 bg-secondary mx-auto mt-6;
+            }
+            
+            .card-hover {
+                @apply transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl;
+            }
+            
+            .nav-link {
+                @apply relative text-primary font-medium hover:text-secondary transition-colors duration-200 
+                       after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 
+                       after:bg-secondary after:transition-all after:duration-300 hover:after:w-full;
+            }
+            
+            .form-input {
+                @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 
+                       focus:ring-secondary focus:border-transparent transition-all duration-200;
+            }
+            
+            .animation-delay-100 {
+                animation-delay: 100ms;
+            }
+            
+            .animation-delay-200 {
+                animation-delay: 200ms;
+            }
+        }
+        
+        /* Ensure animations work */
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        
+        .animate-slide-up {
+            animation: slideUp 0.6s ease-out forwards;
+        }
+        
+        .animate-slide-in {
+            animation: slideIn 0.7s ease-out forwards;
+        }
+    </style>
 </head>
-<body>
-     <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="nav-container">
-                <div class="logo">
-                    <img src="images/logo.png" alt="Praecellens Logo">
-                    <div class="logo-text">Praecellens<span>.</span></div>
-                </div>
+<body class="font-poppins text-dark bg-white antialiased">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50 transition-all duration-300 h-24">
+        <div class="container mx-auto px-6 h-full">
+            <div class="flex justify-between items-center h-full">
+                <!-- Logo -->
+                <a href="index.html" class="logo flex items-center group">
+                    <img src="images/logo.png" alt="Praecellens Logo" 
+                         class="h-16 transition-all duration-300 group-hover:scale-105">
+                    <span class="logo-text text-2xl font-bold text-primary ml-4 group-hover:text-secondary transition-colors">
+                        Praecellens<span class="text-secondary">.</span>
+                    </span>
+                </a>
                 
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn md:hidden text-2xl text-primary focus:outline-none" 
+                        id="mobileMenuBtn" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </button>
                 
-                <nav id="mainNav">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:block" id="mainNav">
+                    <ul class="flex space-x-8">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="projects.html" class="nav-link">Projects</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav hidden md:hidden absolute top-24 left-0 w-full bg-white shadow-lg py-4 px-6" id="mobileNav">
+            <ul class="space-y-4">
+                <li><a href="index.html" class="block py-2 text-primary hover:text-secondary transition-colors">Home</a></li>
+                <li><a href="about.html" class="block py-2 text-primary hover:text-secondary transition-colors">About</a></li>
+                <li><a href="services.html" class="block py-2 text-primary hover:text-secondary transition-colors">Services</a></li>
+                <li><a href="projects.html" class="block py-2 text-primary hover:text-secondary transition-colors">Projects</a></li>
+                <li><a href="contact.html" class="block py-2 text-primary hover:text-secondary transition-colors">Contact</a></li>
+            </ul>
+        </div>
     </header>
 
-    <!-- Contact Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <h1>Contact Us</h1>
-            <p>Let's discuss your engineering needs</p>
+    <!-- Contact Hero Section -->
+    <section class="relative h-96 flex items-center justify-center text-center text-white pt-24">
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/80 to-primary/90"></div>
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/blog7.jpg')"></div>
+        
+        <div class="container relative z-10 px-4">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in">Contact Us</h1>
+            <p class="text-xl md:text-2xl max-w-2xl mx-auto animate-fade-in animation-delay-100">
+                Let's discuss your engineering needs
+            </p>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="container">
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h2>Get in Touch</h2>
-                    <p>Have a project in mind or need technical advice? We'd love to hear from you.</p>
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Contact Info -->
+                <div class="lg:w-1/2 animate-slide-in">
+                    <h2 class="text-3xl font-bold text-primary mb-8">Get in Touch</h2>
                     
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                    <div class="space-y-8">
+                        <!-- Address -->
+                        <div class="flex items-start">
+                            <div class="text-secondary text-2xl mr-6 mt-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
                             <div>
-                                <h4>Head Office</h4>
-                                <p>Nairobi, Kenya</p>
+                                <h3 class="text-xl font-semibold text-primary mb-2">Head Office</h3>
+                                <p class="text-gray-600">Nairobi, Kenya</p>
                             </div>
                         </div>
                         
-                        <div class="contact-item">
-                            <i class="fas fa-envelope contact-icon"></i>
+                        <!-- Email -->
+                        <div class="flex items-start">
+                            <div class="text-secondary text-2xl mr-6 mt-1">
+                                <i class="fas fa-envelope"></i>
+                            </div>
                             <div>
-                                <h4>Email</h4>
-                                <p>info@praecellens.com<br>sales@praecellens.com</p>
+                                <h3 class="text-xl font-semibold text-primary mb-2">Email Us</h3>
+                                <p class="text-gray-600">info@praecellens.com</p>
+                                <p class="text-gray-600">sales@praecellens.com</p>
                             </div>
                         </div>
                         
-                        <div class="contact-item">
-                            <i class="fas fa-phone-alt contact-icon"></i>
+                        <!-- Phone -->
+                        <div class="flex items-start">
+                            <div class="text-secondary text-2xl mr-6 mt-1">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
                             <div>
-                                <h4>Phone</h4>
-                                <p>+254 705 046 110<br>+254 720 123 456</p>
+                                <h3 class="text-xl font-semibold text-primary mb-2">Call Us</h3>
+                                <p class="text-gray-600">+254 705 046 110</p>
+                                <p class="text-gray-600">+254 720 123 456</p>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="business-hours">
-                        <h4>Business Hours</h4>
-                        <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
-                        <p>Saturday: 9:00 AM - 1:00 PM</p>
-                        <p>Sunday: Closed</p>
-                    </div>
-                    
-                    <div class="social-links">
-                        <h4>Follow Us</h4>
-                        <div class="social-icons">
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        
+                        <!-- Business Hours -->
+                        <div class="pt-6">
+                            <h3 class="text-xl font-semibold text-primary mb-4">Business Hours</h3>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex justify-between">
+                                    <span>Monday - Friday</span>
+                                    <span class="font-medium">8:00 AM - 5:00 PM</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span>Saturday</span>
+                                    <span class="font-medium">9:00 AM - 1:00 PM</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span>Sunday</span>
+                                    <span class="font-medium">Closed</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Social Media -->
+                        <div class="pt-6">
+                            <h3 class="text-xl font-semibold text-primary mb-4">Follow Us</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="social-icon bg-gray-100 hover:bg-secondary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-icon bg-gray-100 hover:bg-secondary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-icon bg-gray-100 hover:bg-secondary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-icon bg-gray-100 hover:bg-secondary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="contact-form">
-                    <h2>Send Us a Message</h2>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
+                <!-- Contact Form -->
+                <div class="lg:w-1/2 bg-white p-8 rounded-xl shadow-lg animate-slide-in animation-delay-100">
+                    <h2 class="text-3xl font-bold text-primary mb-6">Send Us a Message</h2>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name *</label>
+                            <input type="text" id="name" class="form-input" required>
                         </div>
                         
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email Address" required>
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
+                            <input type="email" id="email" class="form-input" required>
                         </div>
                         
-                        <div class="form-group">
-                            <input type="tel" class="form-control" placeholder="Phone Number">
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" class="form-input">
                         </div>
                         
-                        <div class="form-group">
-                            <select class="form-control" required>
+                        <div>
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject *</label>
+                            <select id="subject" class="form-input" required>
                                 <option value="">Select Subject</option>
                                 <option>Electrical Engineering</option>
                                 <option>Mechanical Engineering</option>
                                 <option>Energy Solutions</option>
                                 <option>General Inquiry</option>
+                                <option>Career Opportunity</option>
                             </select>
                         </div>
                         
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Your Message *</label>
+                            <textarea id="message" rows="5" class="form-input" required></textarea>
                         </div>
                         
-                        <button type="submit" class="submit-btn">Send Message</button>
+                        <button type="submit" class="btn-primary w-full">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -130,69 +302,113 @@
     </section>
 
     <!-- Map Section -->
-    <section class="map-section">
-        <div class="container">
-            <h2>Our Location</h2>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.808477395885!2d36.82115931475389!3d-1.288385835980925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d664f9d5d7%3A0x7e33d5c771c2e1a1!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <section class="pb-20">
+        <div class="container mx-auto px-4">
+            <div class="rounded-xl overflow-hidden shadow-xl">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.808477395885!2d36.82115931475389!3d-1.288385835980925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d664f9d5d7%3A0x7e33d5c771c2e1a1!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
-        <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">
-                        <img src="images/logo.png" alt="Praecellens Logo">
-                        <div class="footer-logo-text">Praecellens<span>.</span></div>
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 animate-slide-up">Ready to Start Your Project?</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-8 animate-slide-up animation-delay-100">
+                Contact us today for a free consultation with our engineering team.
+            </p>
+            <a href="contact.html" class="btn-primary bg-white text-primary hover:bg-transparent hover:text-white border-white animate-slide-up animation-delay-200">
+                Get in Touch <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-20 pb-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- About -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img src="images/logo-white.png" alt="Praecellens Logo" class="h-12 mr-4">
+                        <span class="text-2xl font-bold">Praecellens<span class="text-secondary">.</span></span>
                     </div>
-                    <p>Pioneering sustainable infrastructure across Kenya through innovative engineering solutions.</p>
+                    <p class="text-white/80 mb-6">
+                        Pioneering sustainable infrastructure across Kenya through innovative engineering solutions.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-icon bg-white/10 hover:bg-secondary w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon bg-white/10 hover:bg-secondary w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon bg-white/10 hover:bg-secondary w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon bg-white/10 hover:bg-secondary w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
                 </div>
                 
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Our Services</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-secondary">
+                        Quick Links
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-white/80 hover:text-secondary transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-white/80 hover:text-secondary transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="text-white/80 hover:text-secondary transition-colors">Our Services</a></li>
+                        <li><a href="projects.html" class="text-white/80 hover:text-secondary transition-colors">Projects</a></li>
+                        <li><a href="contact.html" class="text-white/80 hover:text-secondary transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-links">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#">Electrical Engineering</a></li>
-                        <li><a href="#">Mechanical Engineering</a></li>
-                        <li><a href="#">Energy Solutions</a></li>
-                        <li><a href="#">Consultancy</a></li>
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-secondary">
+                        Services
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="services.html#electrical" class="text-white/80 hover:text-secondary transition-colors">Electrical Engineering</a></li>
+                        <li><a href="services.html#mechanical" class="text-white/80 hover:text-secondary transition-colors">Mechanical Engineering</a></li>
+                        <li><a href="services.html#energy" class="text-white/80 hover:text-secondary transition-colors">Energy Solutions</a></li>
+                        <li><a href="services.html" class="text-white/80 hover:text-secondary transition-colors">Consultancy</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-contact">
-                    <h4>Contact Info</h4>
-                    <p><i class="fas fa-map-marker-alt"></i>Nairobi,Kenya</p>
-                    <p><i class="fas fa-phone-alt"></i> +254 705 046 110</p>
-                    <p><i class="fas fa-envelope"></i> info@praecellens.com</p>
-                    
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-secondary">
+                        Contact Info
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-secondary mr-4 mt-1"></i>
+                            <span class="text-white/80">Nairobi, Kenya</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-secondary mr-4 mt-1"></i>
+                            <span class="text-white/80">+254 705 046 110</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-secondary mr-4 mt-1"></i>
+                            <span class="text-white/80">info@praecellens.com</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="copyright">
+            <div class="border-t border-white/10 pt-8 text-center text-white/60">
                 <p>&copy; 2025 Praecellens Consultancy Ltd. All rights reserved.</p>
             </div>
         </div>
     </footer>
-     <script src="index.js"></script>
+
+    <script src="index.js">
+    </script>
 </body>
 </html>
