@@ -130,50 +130,59 @@
     </style>
 </head>
 <body class="font-poppins text-dark bg-white antialiased">
-    <!-- Header -->
-    <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 transition-all duration-300 h-24">
-        <div class="container mx-auto px-6 h-full">
-            <div class="flex justify-between items-center h-full">
-                <!-- Logo -->
-                <a href="index.html" class="logo flex items-center group">
-                    <img src="images/logo.png" alt="Praecellens Logo" 
-     class="h-40 w-auto transition-all duration-300 group-hover:scale-105">
+        <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50 transition-all duration-300 h-24">
+  <div class="container mx-auto px-6 h-full">
+    <div class="flex justify-between items-center h-full">
+      
+      <!-- Logo -->
+      <a href="index.html" class="logo flex items-center group">
+        <img src="images/logo.png" alt="Praecellens Logo" 
+     class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto transition-all duration-300 group-hover:scale-105">
 
-                    <span class="logo-text text-2xl font-bold text-primary ml-4 group-hover:text-secondary transition-colors">
-                        Praecellens<span class="text-secondary">.</span>
-                    </span>
-                </a>
-                
-                <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn md:hidden text-2xl text-primary focus:outline-none" 
-                        id="mobileMenuBtn" aria-label="Toggle menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-                
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:block" id="mainNav">
-                    <ul class="flex space-x-8">
-                        <li><a href="index.html" class="nav-link">Home</a></li>
-                        <li><a href="about.html" class="nav-link">About</a></li>
-                        <li><a href="services.html" class="nav-link">Services</a></li>
-                        <li><a href="projects.html" class="nav-link">Projects</a></li>
-                        <li><a href="contact.html" class="nav-link text-secondary font-semibold">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        
-        <!-- Mobile Navigation -->
-        <div class="mobile-nav hidden md:hidden absolute top-24 left-0 w-full bg-white shadow-lg py-4 px-6" id="mobileNav">
-            <ul class="space-y-4">
-                <li><a href="index.html" class="block py-2 text-primary hover:text-secondary transition-colors">Home</a></li>
-                <li><a href="about.html" class="block py-2 text-primary hover:text-secondary transition-colors">About</a></li>
-                <li><a href="services.html" class="block py-2 text-primary hover:text-secondary transition-colors">Services</a></li>
-                <li><a href="projects.html" class="block py-2 text-primary hover:text-secondary transition-colors">Projects</a></li>
-                <li><a href="contact.html" class="block py-2 text-secondary font-semibold transition-colors">Contact</a></li>
-            </ul>
-        </div>
-    </header>
+        <span 
+          class="logo-text text-lg sm:text-xl md:text-2xl font-bold text-primary ml-2 sm:ml-4 group-hover:text-secondary transition-colors"
+        >
+          Praecellens<span class="text-secondary">.</span>
+        </span>
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button 
+        class="mobile-menu-btn md:hidden text-2xl text-primary ml-2 focus:outline-none" 
+        id="mobileMenuBtn" 
+        aria-label="Toggle menu"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:block" id="mainNav">
+        <ul class="flex space-x-8">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div 
+    class="mobile-nav hidden md:hidden absolute top-24 left-0 w-full bg-white shadow-lg py-4 px-6" 
+    id="mobileNav"
+  >
+    <ul class="space-y-4">
+      <li><a href="index.html" class="block py-2 text-primary hover:text-secondary transition-colors">Home</a></li>
+      <li><a href="about.html" class="block py-2 text-primary hover:text-secondary transition-colors">About</a></li>
+      <li><a href="services.html" class="block py-2 text-primary hover:text-secondary transition-colors">Services</a></li>
+      <li><a href="projects.html" class="block py-2 text-primary hover:text-secondary transition-colors">Projects</a></li>
+      <li><a href="contact.html" class="block py-2 text-primary hover:text-secondary transition-colors">Contact</a></li>
+    </ul>
+  </div>
+</header>
 
     <!-- Contact Hero Section -->
     <section class="relative h-[500px] flex items-center justify-center text-center text-white pt-24">
@@ -240,92 +249,105 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="py-20" id="contact-form">
-        <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto mb-16 animate-slide-up">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="text-lg text-gray-600">
-                    Have a project in mind or need engineering expertise? Fill out the form below and our team will get back to you within 24 hours.
-                </p>
-            </div>
-            
-            <div class="flex flex-col lg:flex-row gap-12">
-                <!-- Contact Info -->
-                <div class="lg:w-1/2 animate-slide-in">
-                    <div class="bg-primary/5 p-8 rounded-xl border border-primary/10 h-full">
-                        <div class="space-y-8">
-                            <!-- Address -->
-                            <div class="flex items-start">
-                                <div class="text-secondary text-2xl mr-6 mt-1">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-semibold text-primary mb-2">Head Office</h3>
-                                    <p class="text-gray-600">Nairobi, Kenya</p>
-                                    <a href="#map" class="text-secondary text-sm font-medium mt-1 inline-block">
-                                        View on map <i class="fas fa-arrow-right ml-1"></i>
-                                    </a>
-                                </div>
+<!-- Clean Contact Section -->
+<section class="py-20 bg-white" id="contact-form">
+    <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 relative">
+                Get In Touch
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-secondary"></span>
+            </h2>
+            <p class="text-lg text-gray-600">
+                Have a project in mind? Our engineering team is ready to discuss your requirements and provide expert solutions.
+            </p>
+        </div>
+        
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Contact Info Card -->
+            <div class="lg:w-1/2">
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 h-full">
+                    <div class="space-y-8">
+                        <!-- Contact Info Item -->
+                        <div class="flex items-start">
+                            <div class="bg-secondary/10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-map-marker-alt text-secondary text-xl"></i>
                             </div>
-                            
-                            <!-- Email -->
-                            <div class="flex items-start">
-                                <div class="text-secondary text-2xl mr-6 mt-1">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-semibold text-primary mb-2">Email Us</h3>
-                                    <p class="text-gray-600">info@praecellens.com</p>
-                                    <p class="text-gray-600">sales@praecellens.com</p>
-                                </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-primary mb-2">Our Location</h3>
+                                <p class="text-gray-600">Nairobi, Kenya</p>
+                                <a href="#map" class="text-secondary font-medium text-sm mt-2 inline-flex items-center">
+                                    View on map <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                                </a>
                             </div>
-                            
-                            <!-- Phone -->
-                            <div class="flex items-start">
-                                <div class="text-secondary text-2xl mr-6 mt-1">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-semibold text-primary mb-2">Call Us</h3>
-                                    <p class="text-gray-600">+254 705 046 110</p>
-                                    <p class="text-gray-600">+254 720 123 456</p>
-                                </div>
+                        </div>
+                        
+                        <!-- Contact Info Item -->
+                        <div class="flex items-start">
+                            <div class="bg-secondary/10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-envelope text-secondary text-xl"></i>
                             </div>
-                            
-                            <!-- Business Hours -->
-                            <div class="pt-6">
-                                <h3 class="text-xl font-semibold text-primary mb-4">Business Hours</h3>
-                                <ul class="space-y-3 text-gray-600">
-                                    <li class="flex justify-between">
-                                        <span>Monday - Friday</span>
-                                        <span class="font-medium">8:00 AM - 5:00 PM</span>
-                                    </li>
-                                    <li class="flex justify-between">
-                                        <span>Saturday</span>
-                                        <span class="font-medium">9:00 AM - 1:00 PM</span>
-                                    </li>
-                                    <li class="flex justify-between">
-                                        <span>Sunday</span>
-                                        <span class="font-medium">Closed</span>
-                                    </li>
-                                </ul>
+                            <div>
+                                <h3 class="text-xl font-semibold text-primary mb-2">Email Us</h3>
+                                <p class="text-gray-600">info@praecellens.com</p>
+                                <p class="text-gray-600">sales@praecellens.com</p>
                             </div>
+                        </div>
+                        
+                        <!-- Contact Info Item -->
+                        <div class="flex items-start">
+                            <div class="bg-secondary/10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-phone-alt text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-primary mb-2">Call Us</h3>
+                                <p class="text-gray-600">+254 705 046 110</p>
+                                <p class="text-gray-600">+254 720 123 456</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Business Hours -->
+                        <div class="pt-6 border-t border-gray-200">
+                            <h3 class="text-xl font-semibold text-primary mb-4">Business Hours</h3>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex justify-between items-center py-2 border-b border-gray-100">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-clock text-secondary/80 mr-2 text-sm"></i>
+                                        Monday - Friday
+                                    </span>
+                                    <span class="font-medium">8:00 AM - 5:00 PM</span>
+                                </li>
+                                <li class="flex justify-between items-center py-2 border-b border-gray-100">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-clock text-secondary/80 mr-2 text-sm"></i>
+                                        Saturday
+                                    </span>
+                                    <span class="font-medium">9:00 AM - 1:00 PM</span>
+                                </li>
+                                <li class="flex justify-between items-center py-2">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-clock text-secondary/80 mr-2 text-sm"></i>
+                                        Sunday
+                                    </span>
+                                    <span class="font-medium">Closed</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Contact Form -->
-                <div class="lg:w-1/2 bg-white p-8 rounded-xl shadow-lg border border-gray-100 animate-slide-in animation-delay-100">
+            </div>
+            
+            <!-- Contact Form Card -->
+            <div class="lg:w-1/2">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
                     <form id="contactForm" class="space-y-6">
-                        <!-- Name and Email in a grid -->
+                        <!-- Name and Email -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label for="name" class="block text-gray-700 font-medium mb-2">
                                     Your Name <span class="text-secondary">*</span>
                                 </label>
                                 <div class="relative">
-                                    <input type="text" id="name" class="form-input pl-10" required placeholder="John Doe">
+                                    <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent pl-10" required placeholder="John Doe">
                                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                         <i class="fas fa-user text-gray-400"></i>
                                     </div>
@@ -334,10 +356,10 @@
                             
                             <div>
                                 <label for="email" class="block text-gray-700 font-medium mb-2">
-                                    Email Address <span class="text-secondary">*</span>
+                                    Email <span class="text-secondary">*</span>
                                 </label>
                                 <div class="relative">
-                                    <input type="email" id="email" class="form-input pl-10" required placeholder="john@example.com">
+                                    <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent pl-10" required placeholder="john@example.com">
                                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                         <i class="fas fa-envelope text-gray-400"></i>
                                     </div>
@@ -345,12 +367,12 @@
                             </div>
                         </div>
 
-                        <!-- Phone and Subject in a grid -->
+                        <!-- Phone and Subject -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone</label>
                                 <div class="relative">
-                                    <input type="tel" id="phone" class="form-input pl-10" placeholder="+254 700 123456">
+                                    <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent pl-10" placeholder="+254 700 123456">
                                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                         <i class="fas fa-phone-alt text-gray-400"></i>
                                     </div>
@@ -362,7 +384,7 @@
                                     Subject <span class="text-secondary">*</span>
                                 </label>
                                 <div class="relative">
-                                    <select id="subject" class="form-input pl-10 appearance-none" required>
+                                    <select id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent appearance-none pl-10 pr-8" required>
                                         <option value="" disabled selected>Select Subject</option>
                                         <option>Electrical Engineering</option>
                                         <option>Mechanical Engineering</option>
@@ -383,10 +405,10 @@
                         <!-- Message -->
                         <div>
                             <label for="message" class="block text-gray-700 font-medium mb-2">
-                                Your Message <span class="text-secondary">*</span>
+                                Message <span class="text-secondary">*</span>
                             </label>
                             <div class="relative">
-                                <textarea id="message" rows="5" class="form-input pl-10" required placeholder="Tell us about your project..."></textarea>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent pl-10" required placeholder="Tell us about your project..."></textarea>
                                 <div class="absolute top-3 left-3">
                                     <i class="fas fa-comment-dots text-gray-400"></i>
                                 </div>
@@ -394,22 +416,20 @@
                         </div>
 
                         <!-- Submit Button -->
-                        <button type="submit" class="btn-primary w-full group">
-                            <span class="flex items-center justify-center">
-                                Send Message 
-                                <i class="fas fa-paper-plane ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
-                            </span>
+                        <button type="submit" class="w-full bg-secondary hover:bg-secondary/90 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center">
+                            <span class="mr-2">Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
                         </button>
 
-                        <!-- Form Note -->
-                        <p class="text-sm text-gray-500 mt-4">
+                        <p class="text-sm text-gray-500 text-center">
                             <span class="text-secondary">*</span> Required fields. We'll respond within 24 hours.
                         </p>
                     </form>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Team Section -->
     <section class="py-20 bg-light">
@@ -495,23 +515,77 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 animate-slide-up">Ready to Start Your Project?</h2>
-            <p class="text-xl max-w-3xl mx-auto mb-8 animate-slide-up animation-delay-100">
-                Our team of engineering experts is ready to bring your vision to life with innovative solutions.
+<!-- Clean CTA Section -->
+<section class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+    <!-- Container with subtle grid pattern -->
+    <div class="container mx-auto px-4 relative">
+        <div class="absolute inset-0 opacity-5 bg-grid-white/10"></div>
+        
+        <div class="relative z-10 max-w-3xl mx-auto text-center">
+            <!-- Heading with accent underline -->
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 animate-slide-up">
+                Ready to <span class="relative pb-1">Elevate
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-accent animate-underline-expand"></span>
+                </span> Your Project?
+            </h2>
+            
+            <!-- Supporting text -->
+            <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto animate-fade-in animation-delay-100">
+                Partner with our engineering experts to bring your vision to life with precision and innovation.
             </p>
+            
+            <!-- Action buttons -->
             <div class="flex flex-col sm:flex-row justify-center gap-4 animate-slide-up animation-delay-200">
-                <a href="#contact-form" class="btn-primary bg-white text-primary hover:bg-transparent hover:text-white border-white">
-                    Get a Free Quote <i class="fas fa-file-signature ml-2"></i>
+                <!-- Primary CTA -->
+                <a href="contact.html" class="relative group inline-flex items-center justify-center px-8 py-4 bg-white text-primary rounded-lg font-bold overflow-hidden transition-all duration-300 hover:bg-primary hover:text-white shadow-lg hover:shadow-xl">
+                    <span class="relative z-10 flex items-center">
+                        <i class="fas fa-paper-plane mr-3"></i> Get Started
+                    </span>
+                    <span class="absolute inset-0 bg-accent opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
                 </a>
-                <a href="tel:+254705046110" class="btn-outline border-white text-white hover:bg-white hover:text-primary">
-                    Call Us Now <i class="fas fa-phone-alt ml-2"></i>
+                
+                <!-- Secondary CTA -->
+                <a href="tel:+254705046110" class="relative group inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white rounded-lg font-bold overflow-hidden transition-all duration-300 hover:bg-white hover:text-primary shadow-md hover:shadow-lg">
+                    <span class="relative z-10 flex items-center">
+                        <i class="fas fa-phone-alt mr-3"></i> Call Now
+                    </span>
+                    <span class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
                 </a>
             </div>
+            
+            <!-- Trust badges -->
+            <div class="mt-12 flex flex-wrap justify-center items-center gap-6 text-white/80 animate-fade-in animation-delay-300">
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
+                    <i class="fas fa-check-circle text-accent mr-2"></i>
+                    <span>Certified Engineers</span>
+                </div>
+                <div class="flex items-center bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
+                    <i class="fas fa-check-circle text-accent mr-2"></i>
+                    <span>15+ Years Experience</span>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+    /* Background grid pattern */
+    .bg-grid-white\/10 {
+        background-image: 
+            linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px);
+        background-size: 40px 40px;
+    }
+    
+    /* Underline animation */
+    @keyframes underline-expand {
+        0% { transform: scaleX(0); }
+        100% { transform: scaleX(1); }
+    }
+    .animate-underline-expand {
+        animation: underline-expand 0.8s ease-out forwards;
+    }
+</style>
 
     <!-- Footer -->
     <footer class="bg-dark text-white pt-20 pb-10">
