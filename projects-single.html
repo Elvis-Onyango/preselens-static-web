@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Praecellens Consultancy</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#001F3F',
+                        secondary: '#009FE3',
+                        accent: '#0074D9',
+                        light: '#F5F5F5',
+                        dark: '#000000',
+                        gray: '#6D6D6D',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'slide-in': 'slideIn 0.7s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideIn: {
+                            '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
+    
+    <style type="text/tailwindcss">
+        @layer components {
+            .btn-primary {
+                @apply inline-flex items-center justify-center bg-secondary text-white px-8 py-3 rounded-full font-semibold 
+                       transition-all duration-300 ease-out border-2 border-secondary shadow-lg hover:bg-transparent 
+                       hover:text-secondary hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-2 
+                       focus:ring-secondary focus:ring-opacity-50;
+            }
+            
+            .btn-outline {
+                @apply inline-flex items-center justify-center bg-transparent text-secondary px-8 py-3 rounded-full 
+                       font-semibold transition-all duration-300 ease-out border-2 border-secondary shadow-lg 
+                       hover:bg-secondary hover:text-white hover:-translate-y-1 hover:shadow-xl focus:outline-none 
+                       focus:ring-2 focus:ring-secondary focus:ring-opacity-50;
+            }
+            
+            .section-title {
+                @apply text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 relative;
+            }
+            
+            .section-title::after {
+                @apply content-[''] block w-20 h-1 bg-secondary mx-auto mt-6;
+            }
+            
+            .card-hover {
+                @apply transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl;
+            }
+            
+            .nav-link {
+                @apply relative text-primary font-medium hover:text-secondary transition-colors duration-200 
+                       after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 
+                       after:bg-secondary after:transition-all after:duration-300 hover:after:w-full;
+            }
+            
+            .project-gallery-item {
+                @apply transition-all duration-500 ease-out hover:scale-105 cursor-pointer;
+            }
+        }
+    </style>
+</head>
+<body class="font-poppins text-dark bg-white antialiased">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50 transition-all duration-300 h-24">
+        <div class="container mx-auto px-6 h-full">
+            <div class="flex justify-between items-center h-full">
+                <!-- Logo -->
+                <a href="index.html" class="logo flex items-center group">
+                    <img src="images/logo.png" alt="Praecellens Logo" 
+                        class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto transition-all duration-300 group-hover:scale-105">
+
+                    <span class="logo-text text-lg sm:text-xl md:text-2xl font-bold text-primary ml-2 sm:ml-4 group-hover:text-secondary transition-colors">
+                        Praecellens<span class="text-secondary">.</span>
+                    </span>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn md:hidden text-2xl text-primary ml-2 focus:outline-none" 
+                        id="mobileMenuBtn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:block" id="mainNav">
+                    <ul class="flex space-x-8">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="projects.html" class="nav-link">Projects</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav hidden md:hidden absolute top-24 left-0 w-full bg-white shadow-lg py-4 px-6" id="mobileNav">
+            <ul class="space-y-4">
+                <li><a href="index.html" class="block py-2 text-primary hover:text-secondary transition-colors">Home</a></li>
+                <li><a href="about.html" class="block py-2 text-primary hover:text-secondary transition-colors">About</a></li>
+                <li><a href="services.html" class="block py-2 text-primary hover:text-secondary transition-colors">Services</a></li>
+                <li><a href="projects.html" class="block py-2 text-primary hover:text-secondary transition-colors">Projects</a></li>
+                <li><a href="contact.html" class="block py-2 text-primary hover:text-secondary transition-colors">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Project Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-br from-primary to-primary/90 text-white">
+        <div class="container relative z-10 px-4 mx-auto">
+            <div class="max-w-4xl">
+                <a href="projects.html" class="inline-flex items-center text-white/80 hover:text-secondary mb-6 transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i> Back to Projects
+                </a>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in">
+                    Nairobi Commercial Complex
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 animate-fade-in animation-delay-100">
+                    Comprehensive electrical and mechanical engineering solutions for a modern commercial development
+                </p>
+                <div class="flex flex-wrap gap-4 animate-fade-in animation-delay-200">
+                    <span class="bg-white/10 px-4 py-2 rounded-full text-sm backdrop-blur-sm">Electrical Engineering</span>
+                    <span class="bg-white/10 px-4 py-2 rounded-full text-sm backdrop-blur-sm">Mechanical Systems</span>
+                    <span class="bg-white/10 px-4 py-2 rounded-full text-sm backdrop-blur-sm">Energy Efficiency</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Main Content -->
+                <div class="lg:w-2/3">
+                    <!-- Project Gallery -->
+                    <div class="mb-12">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="md:col-span-2 rounded-xl overflow-hidden shadow-xl">
+                                <img src="images/building1.jpg" alt="Project Overview" class="w-full h-auto project-gallery-item">
+                            </div>
+                            <div class="rounded-xl overflow-hidden shadow-lg">
+                                <img src="images/building2.jpg" alt="Electrical Systems" class="w-full h-auto project-gallery-item">
+                            </div>
+                            <div class="rounded-xl overflow-hidden shadow-lg">
+                                <img src="images/building3.jpg" alt="Mechanical Systems" class="w-full h-auto project-gallery-item">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Description -->
+                    <div class="mb-12">
+                        <h2 class="text-3xl font-bold text-primary mb-6">Project Overview</h2>
+                        <div class="prose max-w-none text-gray-600">
+                            <p>
+                                The Nairobi Commercial Complex is a state-of-the-art mixed-use development in Westlands, featuring office spaces, retail outlets, and hospitality facilities. Praecellens was entrusted with the complete electrical and mechanical engineering design and implementation for this landmark project.
+                            </p>
+                            <p>
+                                Our team delivered innovative solutions that balanced aesthetic requirements with functional performance, ensuring energy efficiency and sustainability throughout the complex. The project presented unique challenges due to its scale and the need to integrate multiple building systems seamlessly.
+                            </p>
+                            <h3 class="text-xl font-semibold text-primary mt-8 mb-4">Key Engineering Solutions</h3>
+                            <ul>
+                                <li>Designed and implemented a robust electrical distribution system serving 25,000 sqm of commercial space</li>
+                                <li>Developed energy-efficient HVAC systems tailored to Nairobi's climate</li>
+                                <li>Integrated smart lighting controls with daylight harvesting</li>
+                                <li>Implemented water conservation systems throughout the complex</li>
+                                <li>Designed fire protection systems meeting international standards</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Project Features -->
+                    <div class="mb-12">
+                        <h2 class="text-3xl font-bold text-primary mb-6">Technical Specifications</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                                <div class="text-secondary text-3xl mb-4">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-primary mb-3">Electrical Systems</h3>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                                        <span>1.5MW power distribution</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                                        <span>Backup generator system</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                                        <span>Smart lighting controls</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                                <div class="text-secondary text-3xl mb-4">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-primary mb-3">Mechanical Systems</h3>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                                        <span>Centralized HVAC system</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                                        <span>Water-efficient plumbing</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                                        <span>Fire suppression systems</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Sidebar -->
+                <div class="lg:w-1/3">
+                    <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 sticky top-8">
+                        <h3 class="text-xl font-bold text-primary mb-6">Project Details</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-700 mb-2">Client</h4>
+                                <p class="text-gray-600">Nairobi Commercial Developers</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-700 mb-2">Location</h4>
+                                <p class="text-gray-600">Westlands, Nairobi, Kenya</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-700 mb-2">Completion Date</h4>
+                                <p class="text-gray-600">June 2023</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-700 mb-2">Project Size</h4>
+                                <p class="text-gray-600">25,000 sqm</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-700 mb-2">Services Provided</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                                        <span>Electrical Engineering</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                                        <span>Mechanical Systems</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                                        <span>Energy Consulting</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="pt-4">
+                                <a href="contact.html" class="btn-primary w-full text-center">
+                                    <i class="fas fa-envelope mr-2"></i> Request Similar Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Projects -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title animate-slide-in">Related Projects</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12 text-lg animate-slide-in animation-delay-100">
+                Explore more of our engineering solutions
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Related Project 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover animate-slide-up animation-delay-150">
+                    <div class="relative group">
+                        <img src="images/building2.jpg" alt="Mombasa Industrial Plant" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                            <h3 class="text-white text-xl font-bold mb-2">Mombasa Industrial Plant</h3>
+                            <p class="text-white/90 mb-4">Energy efficiency upgrade</p>
+                            <a href="projects-single.html" class="btn-outline btn-sm self-start border-white text-white hover:bg-white hover:text-primary">
+                                View Project <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">Electrical</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">Energy</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">Mombasa Industrial Plant</h3>
+                        <p class="text-gray-600">Energy efficiency retrofit for manufacturing facility</p>
+                    </div>
+                </div>
+                
+                <!-- Related Project 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover animate-slide-up animation-delay-200">
+                    <div class="relative group">
+                        <img src="images/building3.jpg" alt="Karen Residential Estate" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                            <h3 class="text-white text-xl font-bold mb-2">Karen Residential Estate</h3>
+                            <p class="text-white/90 mb-4">Complete MEP solutions</p>
+                            <a href="projects-single.html" class="btn-outline btn-sm self-start border-white text-white hover:bg-white hover:text-primary">
+                                View Project <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">Electrical</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">Mechanical</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">Plumbing</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">Karen Residential Estate</h3>
+                        <p class="text-gray-600">Modern MEP systems for luxury residences</p>
+                    </div>
+                </div>
+                
+                <!-- Related Project 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover animate-slide-up animation-delay-250">
+                    <div class="relative group">
+                        <img src="images/blog6.jpg" alt="Nakuru Solar Farm" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                            <h3 class="text-white text-xl font-bold mb-2">Nakuru Solar Farm</h3>
+                            <p class="text-white/90 mb-4">Renewable energy solution</p>
+                            <a href="projects-single.html" class="btn-outline btn-sm self-start border-white text-white hover:bg-white hover:text-primary">
+                                View Project <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">Solar</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">Energy</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">Nakuru Solar Farm</h3>
+                        <p class="text-gray-600">2MW solar PV installation with battery storage</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 animate-slide-up">Have a Similar Project?</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-8 animate-slide-up animation-delay-100">
+                Contact our engineering team to discuss how we can bring your vision to life.
+            </p>
+            <a href="contact.html" class="btn-primary bg-white text-primary hover:bg-transparent hover:text-white border-white animate-slide-up animation-delay-200">
+                Get a Free Consultation <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-20 pb-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- About -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img src="images/logo.png" alt="Praecellens Logo" class="h-12 mr-4">
+                        <span class="text-2xl font-bold">Praecellens<span class="text-secondary">.</span></span>
+                    </div>
+                    <p class="text-white/80 mb-6">
+                        Pioneering sustainable infrastructure across Kenya through innovative engineering solutions.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-icon bg-white/10 hover:bg-secondary w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon bg-white/10 hover:bg-secondary w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon bg-white/10 hover:bg-secondary w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon bg-white/10 hover:bg-secondary w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-secondary">
+                        Quick Links
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-white/80 hover:text-secondary transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-white/80 hover:text-secondary transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="text-white/80 hover:text-secondary transition-colors">Our Services</a></li>
+                        <li><a href="projects.html" class="text-white/80 hover:text-secondary transition-colors">Projects</a></li>
+                        <li><a href="contact.html" class="text-white/80 hover:text-secondary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-secondary">
+                        Services
+                    </h3>
+                    <ul class="space-y-3">
+                        <li><a href="services.html#electrical" class="text-white/80 hover:text-secondary transition-colors">Electrical Engineering</a></li>
+                        <li><a href="services.html#mechanical" class="text-white/80 hover:text-secondary transition-colors">Mechanical Engineering</a></li>
+                        <li><a href="services.html#energy" class="text-white/80 hover:text-secondary transition-colors">Energy Solutions</a></li>
+                        <li><a href="services.html" class="text-white/80 hover:text-secondary transition-colors">Consultancy</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-10 after:h-0.5 after:bg-secondary">
+                        Contact Info
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-secondary mr-4 mt-1"></i>
+                            <span class="text-white/80">Nairobi, Kenya</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-secondary mr-4 mt-1"></i>
+                            <span class="text-white/80">+254 705 046 110</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-secondary mr-4 mt-1"></i>
+                            <span class="text-white/80">info@praecellens.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 text-center text-white/60">
+                <p>&copy; 2025 Praecellens Consultancy Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mobileNav').classList.toggle('hidden');
+        });
+        
+        // Initialize animations when elements come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-slide-up, .animate-slide-in, .animate-fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                }
+            });
+        };
+        
+        // Run on load and scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
